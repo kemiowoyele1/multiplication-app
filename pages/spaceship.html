@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alien space ship</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+body{
+    background-image: url(../images/back7.jpg);
+    background-size: 100vw 170vh;
+   
+}
+ .overlay1{
+    height: 100%;
+     top: 0%;
+     width: 100%;
+     left: 0;
+     position: absolute;
+     background-image: url(../images/space.gif),url(../images/back7.jpg), linear-gradient(90deg, rgba(11,7,73,1) 0%, rgba(7,58,139,1) 47%, rgba(5,5,91,1) 100%);  
+        /*background-color: red;*/
+    background-size:100vw 110vh ;
+   /* animation: space 2s infinite;
+    animation-timing-function: linear;
+   */
+   background-blend-mode: screen;
+ }
+
+    .container{
+        position: absolute;
+        height: 100vh;
+        width: 70vw;
+        top: 0;
+        left: 15%;
+        overflow: hidden;
+        /*background-image: url('../images/space.gif')*/
+    }
+    a{
+        text-decoration: none;
+    }
+      .clock-meter{
+        position: absolute;
+        height: 20%;
+        width: 30%;
+        top: 2%;
+        left: 5%;
+        background-color: rgb(161, 224, 243);
+       border-radius: 100%;
+       border:5px solid white;
+       box-shadow: inset 0 0 5px rgb(179, 178, 178), 0 0 2px rgb(192, 190, 190);
+      }
+      .meter-glass{
+        position: absolute;
+        height: 96%;
+        width: 96%;
+        top: 2%;
+        left: 2%;
+        background-color: rgba(255, 255, 255, 0.212);
+       border-radius: 100%;
+       border:1px solid rgb(185, 182, 182);
+       box-shadow: inset 2px 2px 10px rgb(18, 18, 53), inset -2px -2px 10px rgb(18, 17, 58);
+       color: rgb(15, 10, 59);
+      }
+      .clock{
+        position: absolute;
+        font-size: 12px;
+      }
+      .clock:nth-child(1){
+        top: 80%;
+        left: 25%;
+      }
+      .clock:nth-child(2){
+        top: 62%;
+        left: 9%;
+      }
+      .clock:nth-child(3){
+        top: 42%;
+        left: 5%;
+      }
+      .clock:nth-child(4){
+        top: 22%;
+        left: 9%;
+      }
+      .clock:nth-child(5){
+        top: 7%;
+        left: 25%;
+      }
+      .clock:nth-child(6){
+        top: 2%;
+        left: 43%;
+      }
+      .clock:nth-child(7){
+        top: 7%;
+        left: 63%;
+      }
+      .clock:nth-child(8){
+        top: 22%;
+        left: 83%;
+      }
+      .clock:nth-child(9){
+        top: 42%;
+        left: 87%;
+      }
+      .clock:nth-child(10){
+        top: 62%;
+        left: 83%;
+      }
+      .clock:nth-child(11){
+        top: 82%;
+        left: 63%;
+      }
+      .current-clock{
+        position: absolute;
+          top: 60%;
+          left: 40%;
+        
+      }
+      .clock-hand{
+          position: absolute;
+          height: 50%;
+          width: 3px;
+          background: rgb(255, 0, 64);
+          left: 50%;
+          transform: rotate(0deg);
+        top: 50%;
+         /* animation: clock-hand 20s linear; */
+      }
+      .hand-sheild{
+        position: absolute;
+          height: 30%;
+          width: 30%;
+          background: rgb(15, 10, 59);
+          border-radius: 50%;
+          top: 35%;
+          left: 35%;
+        
+      }
+     
+    .timer {
+    position: absolute;
+    display: flex;
+    padding: 10px 15px;
+    left: 70%;
+    top: 7%;
+    text-decoration: none;
+    overflow:hidden;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 25px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0005);
+    background-color: #03e9f4;
+    color:#050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4;
+    animation: timer 2s infinite;
+}
+.timer span{
+    position: absolute;
+    display: block;
+}
+.timer span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1s linear infinite;
+}
+
+.timer span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.timer span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height:2px ;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+.timer span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height:100% ;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+
+    .glass-half{
+        position: absolute;
+        height: 30%;
+        width: 25%;
+        top: 25%;
+        left: 50%;
+        background-color: rgba(0, 225, 255, 0.5);
+        /* box-shadow: inset 2px 2px 0 0 rgb(0, 0, 0), 2px 2px 0 0 rgb(0, 0, 0); */
+        border-top-left-radius:0% 50%;
+    border-top-right-radius :150% 140%;
+    border-bottom-left-radius :00% 20%;
+    border-bottom-right-radius:50% 20%;
+    z-index: 10;
+ }
+ .half2{
+     left: 25%;
+     transform: rotateY(180deg);
+     z-index: 10;
+
+ }
+ .body-half{
+        position: absolute;
+        height: 30%;
+        width: 40%;
+        top: 47%;
+        left: 50%;
+        background-color: rgb(67, 80, 82);
+        /* box-shadow: inset 2px 2px 0 0 rgb(0, 0, 0), 2px 2px 0 0 rgb(0, 0, 0); */
+        border-top-left-radius:0% 50%;
+    border-top-right-radius :150% 140%;
+    border-bottom-left-radius :00% 20%;
+    border-bottom-right-radius:50% 20%;
+    border-bottom: 10px ridge  rgb(4, 15, 63);
+    background: rgb(219,217,217);
+background: linear-gradient(90deg, rgba(219,217,217,1) 13%, rgba(128,136,127,1) 59%, rgba(126,128,125,0.9856755037485443) 100%);
+}
+ .body2{
+     left: 10%;
+     transform: rotateY(180deg);
+ }
+ .inner-body{
+        position: absolute;
+        height: 24%;
+        width: 55%;
+        top: 2%;
+        left: 0%;
+        background-color: rgb(4, 15, 63);
+        border-top-left-radius:0%;
+    border-top-right-radius :150% 140%;
+    border-bottom-left-radius :0%;
+    border-bottom-right-radius:70% 20%;
+    z-index: 9;
+
+  }
+ .inner-body2{
+     left: 0%;
+  }
+  .inner-ship{
+        position: absolute;
+        height: 55%;
+        width: 90%;
+        top: 0;
+        left: 0%;
+        border-bottom: 5px ridge  rgb(47, 47, 49);
+    background-color: transparent;
+        border-top-left-radius:0%;
+    border-top-right-radius :150% 140%;
+    border-bottom-left-radius :0%;
+    border-bottom-right-radius:70% 20%;
+    z-index: 8;
+
+  }
+ .inner-ship2{
+     left: 0%;
+     z-index: 8;
+
+  }
+  .opt, .marking{
+    position: absolute;
+        height: 40%;
+        width: 30%;
+        top: 35%;
+        left: 70%;
+        border-radius: 50%;
+        border: 5px solid  rgb(193, 193, 197);
+        background: rgb(180,247,184);
+background: radial-gradient(circle, rgba(180,247,184,1) 19%, rgba(64,251,41,1) 60%, rgba(64,190,2,0.9856755037485443) 100%);
+  box-shadow: inset 0 0 5px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   z-index: 15; 
+  }
+  .opt3, .marking3{
+     left:70%;
+     z-index: 50;
+    }
+  .opt2, .marking2{
+     left:-15%; 
+  }
+  .opt1, .marking1{
+      left:-95%;
+   }
+   .question{
+    position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0%;
+        left: 0%;
+        display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   z-index: 15; 
+  font-size: 20px;
+  font-weight: bolder;
+  color: rgb(215, 235, 228);
+  letter-spacing: 4px;
+   text-shadow: 1px 1px rgb(1, 53, 48), -1px -1px rgb(1, 70, 70) ;
+   }
+   .correct-ans{
+    position: absolute;
+        height: 100%;
+        width: 200%;
+        top: 0%;
+        left: -100%;
+        display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   z-index: 105; 
+  font-size: 30px;
+  font-weight: bolder;
+  color: rgb(253, 253, 253);
+  letter-spacing: 4px;
+  text-shadow: 1px 1px rgb(1, 53, 48), -1px -1px rgb(1, 70, 70) ;
+ 
+   }
+   .light-ray{
+    position: absolute;
+        height: 140%;
+        width: 50%;
+        top: 70%;
+        left: 25%;
+     z-index: 0; 
+     background: rgb(9,231,217);
+background: linear-gradient(90deg, rgba(9,231,217,0.5477873049907802) 60%, rgba(250,250,250,0.49499227393487966) 77%, 
+rgba(36,243,230,0.2341227087174883) 100%);
+     clip-path: polygon(14% 0, 88% 0, 100% 100%, 0% 100%);  
+ animation: light-widen 1s infinite;
+ display:none;
+   }
+   .light-ray::after{
+       content: "";
+    position: absolute;
+        height: 200%;
+        width: 50%;
+        top: 0%;
+        left: 25%;
+     z-index: -1; 
+     background: rgb(37,236,60);
+background: linear-gradient(180deg, rgba(37,236,60,0.5943711559224574) 0%, rgba(235,19,194,0.5291537646181095) 21%, rgba(14,235,221,0.45151401306531447) 41%, rgba(162,9,231,0.5477873049907802) 60%, 
+rgba(250,5,5,0.6098991062330164) 77%, rgba(51,243,36,0.2341227087174883) 100%);   
+ background-size: 50% 50%;
+   animation: light-move 1s infinite;
+   }
+   
+   .light-ray::before{
+       content: "";
+    position: absolute;
+        height: 100%;
+        width: 30%;
+        top: 0%;
+        left: 35%;
+        z-index: 0; 
+        background: rgb(37,236,60);
+background: linear-gradient(90deg, rgba(37,236,60,0.5943711559224574) 0%, rgba(235,19,194,0.5291537646181095) 21%, rgba(14,235,221,0.45151401306531447) 41%, rgba(162,9,231,0.5477873049907802) 60%, 
+rgba(250,5,5,0.6098991062330164) 77%, rgba(51,243,36,0.2341227087174883) 100%);   
+   }
+  
+   .rocket{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0%;
+        left: 0%;
+        transition: 1s;
+        /* animation: rocket-move 5s linear both; */
+    }
+.marking{
+    /* position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 20%;
+        left: -10%;*/
+        font-size: 70px; 
+        font-weight: bolder;
+        letter-spacing: -16px;
+        display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+ color:rgb(87, 4, 25);
+ display:none;
+ z-index: 200;
+ background: rgba(180, 247, 185, 0);
+background-size: 100% 100%;
+box-shadow: 0 0 5px #17f403,
+                0 0 25px rgb(11, 244, 3),
+                0 0 50px #c0f403;
+
+}
+
+.play-again{
+    position: absolute;
+        padding:10px;
+        top: 30%;
+        width: 60%;
+        left:20%;
+        font-size: 40px;
+        font-weight: bolder;
+        letter-spacing: 1px;
+        display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+ color:rgb(226, 235, 224);
+ background: rgb(250,250,250);
+background: radial-gradient(circle, rgba(250,250,250,1) 0%, rgba(53,231,9,0.8707686714504076) 34%,
+ rgba(27,251,0,1) 100%);
+text-shadow: 1px 1px rgb(9, 39, 2), -1px -1px rgb(9, 39, 2);
+box-shadow: 0 0 5px #5bf403,
+                0 0 25px #61bd16,
+                0 0 50px #6e9c43,
+                inset 0 0 5px rgb(0, 0, 0);
+
+border-radius: 20px;
+animation: replay 1s infinite;
+/* animation-delay: 5s; */
+opacity: 0;
+z-index: 100;
+display: none
+}
+.next{
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        top: 86%;
+        left: 78%;
+       z-index: 10;
+        background-image: url(../images/next.png);
+        background-size: 100% 100%;
+        display: none;
+        z-index: 200;
+     }
+
+
+@keyframes replay{
+    0%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 0.8;
+    }
+    50%{
+        opacity: 1;
+        font-size: 63px;
+    }
+    100%{
+        opacity: 0.8;
+        font-size: 65px;
+    }
+    
+}
+   @keyframes rocket-move{
+    0%{
+        transform: rotate(40deg);
+        top: 0%;
+       }
+       20%{
+        transform: rotate(-40deg);
+        top: 0%;
+       }
+       40%{
+        transform: rotate(40deg);
+        top: 0%;
+       }
+       50%{
+        transform: rotate(0deg);
+        top: 0%;
+       }
+       100%{
+        transform: rotate(0deg);
+        top: -100%;
+       }
+   }
+   @keyframes rocket-fail-move{
+    0%{
+        transform: rotate(10deg);
+        top: 0%;
+       }
+       20%{
+        transform: rotate(-10deg);
+        top: 0%;
+       }
+       40%{
+        transform: rotate(10deg);
+        top: 0%;
+       }
+       50%{
+        transform: rotate(0deg);
+        top: 0%;
+       }
+       55%{
+        transform: rotate(0deg);
+        top: 10%;
+       }
+       60%{
+        transform: rotate(0deg);
+        top: 5%;
+       }
+       65%{
+        transform: rotate(0deg);
+        top: 20%;
+       }
+       70%{
+        transform: rotate(0deg);
+        top: 10%;
+       }
+       75%{
+        transform: rotate(0deg);
+        top: 30%;
+       }
+       80%{
+        transform: rotate(0deg);
+        top: 20%;
+       }
+       90%{
+        transform: rotate(0deg);
+        top: 40%;
+       }
+       95%{
+        transform: rotate(0deg);
+        top: 35%;
+       }
+       100%{
+        transform: rotate(0deg);
+        top: 50%;
+       }
+   }
+ 
+  
+   @keyframes light-move{
+    0%{
+           background-position-y: 100%;
+       }
+       100%{
+           background-position-y: -100%;
+       }
+   }
+   @keyframes light-widen{
+    0%{
+           width: 50%;
+           left: 25%;
+       }
+       100%{
+           width: 30%;
+           left: 35%;
+       }
+   }
+   @keyframes clock-hand{
+   0%, 100%{
+        top: 40%;
+          left: 37%;
+          transform:rotate(-330deg);    
+       }
+       81%{
+        top: 35%;
+          left: 30%;
+          transform:rotate(-300deg);    
+       }
+       72%{
+        top: 24%;
+          left: 30%;
+          transform:rotate(-280deg);    
+       }
+       63%{
+        top: 14%;
+          left: 30%;
+          transform:rotate(-250deg);    
+       }
+       54%{
+        top: 9%;
+          left: 40%;
+          transform:rotate(-220deg);    
+       }
+       45%{
+        top: 9%;
+          left: 50%;
+          transform:rotate(-190deg);    
+       }
+       36%{
+        top: 9%;
+          left: 55%;
+          transform:rotate(-145deg);    
+       }
+       27%{
+        top: 20%;
+          left: 60%;
+          transform:rotate(-110deg);    
+       } 
+       18%{
+        top: 27%;
+          left: 65%;
+          transform:rotate(-100deg);    
+       }
+ 9%{
+        top: 37%;
+          left: 65%;
+          transform:rotate(-70deg);    
+       }
+        0%{
+        top: 45%;
+          left: 53%;
+          transform:rotate(-30deg);    
+       }
+     
+   }
+ 
+@keyframes timer{
+    0%,50%{
+        background-color: #03e9f4;
+    color:#050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4;
+    
+    }
+    100%{
+        background-color:#050801;
+        color: #03e9f4;
+        box-shadow: 0 0 5px #272929,
+                0 0 25px #222424;
+  
+    }
+} 
+@keyframes animate1{
+    0%{
+        left:-100%;
+    }
+    50%, 100%{
+        left: 100%;
+    }
+}
+
+@keyframes animate2{
+    0%{
+        top:-100%;
+    }
+    50%, 100%{
+        top: 100%;
+    }
+}
+@keyframes animate3{
+    0%{
+        right:-100%;
+    }
+    50%, 100%{
+        right: 100%;
+    }
+}
+ @keyframes animate4{
+    0%{
+        bottom:-100%;
+    }
+    50%, 100%{
+        bottom: 100%;
+    }
+} 
+
+ /*@keyframes space{
+    0%{
+         background-position-y: -100vh;
+     }
+     100%{
+         background-position-y: 0vh;
+     }
+ }*/
+audio{
+    visibility: hidden;
+}
+</style>
+</head>
+<body>
+  <div class="overlay1"></div>
+    <div class="container">
+        <div class="clock-meter">
+            <div class="meter-glass">
+                <span class="clock">0</span>
+                <span class="clock">1</span>
+                <span class="clock">2</span>
+                <span class="clock">3</span>
+                <span class="clock">4</span>
+                <span class="clock">5</span>
+                <span class="clock">6</span>
+                <span class="clock">7</span>
+                <span class="clock">8</span>
+                <span class="clock">9</span>
+                <span class="clock">10</span>
+                <span class="current-clock"></span>
+                <div class="clock-hand"></div>
+                <div class="hand-sheild"></div>
+            </div>
+        </div> 
+        <div class="timer">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                       <p class="myscore"></p>
+                    
+        </div>
+        <a href="spaceship.html" class="play-again">
+                <div>play <br> again</div>
+          </a>
+        <div class="rocket">
+               
+               
+           <div class="glass-top">
+                <div class="light-ray"></div>
+               <div class="question">2*5 = ?</div>
+                <div class="glass-half half1"> <div class="correct-ans"></div>
+            </div>
+                <div class="glass-half half2"></div>
+                <div class="body-half body1">
+                        <div class="inner-body inner-body1"></div>
+                        <div class="inner-ship inner-ship1"></div>
+                        <div class="opt opt1">14
+                         </div>
+                         <div class="marking marking1"></div>
+                       
+                        <div class="opt opt2">20
+                         </div>
+                         <div class="marking marking2"></div>
+                      
+                        <div class="opt opt3">10
+                            </div>
+                            <div class="marking marking3"></div>
+                       
+                    </div>
+                <div class="body-half body2">
+                        <div class="inner-body inner-body2"></div>
+                        <div class="inner-ship inner-ship1"></div>
+                       </div>
+            </div>
+        </div>
+        <div class="next" onclick="loadNextQuestion()"></div>
+        <audio controls id="sound"><source src="../audio/correct.mp3" loop="false" type="audio/mp3"></audio>
+            <audio controls id="time-sound"><source src="../audio/time.mp3" loop="true" type="audio/mp3"></audio>
+
+    </div>
+   <script src="../js/p5.dom.min.js"></script>
+    <script src="../js/p5.min.js"></script>
+    <script src="../js/p5.sound.min.js"></script>
+    <script src="../js/p5.speech.js"></script>
+    <script src="../js/quizobj.js"></script>
+    <script src="../js/quiz.js"></script>
+   
+</body>
+</html>

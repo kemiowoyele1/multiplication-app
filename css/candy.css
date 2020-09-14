@@ -1,0 +1,148 @@
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+       background-color: aquamarine;
+      
+    }
+    .container{
+       text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: pink;
+        overflow: hidden;
+        background: url(../images/candyland.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        min-height: 130vh;
+        overflow: hidden;
+    }
+    .overlay{
+        position: absolute;
+        height: 130%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.788);
+       
+    }
+    .inner{
+        z-index: 10;
+        position: relative;
+        min-height: 100vh;
+        width: 80vw;
+        margin: 5vh auto;
+        background-color: rgba(25, 1, 39, 0.767);
+        box-shadow: 0 0 10px black;
+    }
+    h4{
+        font-size: 40px;
+        font-weight: bolder;
+        text-shadow: 1px 1px deeppink, -1px -1px deeppink;
+        padding: 15px;
+         }
+    p{
+        font-size: 30px;
+        font-weight: bolder;
+        color: rgb(247, 247, 109);
+        text-shadow: 1px 1px rgb(20, 63, 255), -1px -1px rgb(20, 55, 255);
+        margin: 20px;
+    }
+    .example{
+        background-color: rgba(243, 40, 175, 0.384);
+        padding: 10px;
+    }
+    h1{
+        font-size: 110px;
+        font-weight: bolder;
+        color: violet;
+        text-shadow: 1px 1px rgb(89, 1, 139), -1px -1px rgb(40, 5, 85),
+                    2px 2px rgb(89, 1, 139), -2px -2px rgb(40, 5, 85),
+                    3px 3px rgb(89, 1, 139), -3px -3px rgb(40, 5, 85);
+                    text-decoration: underline;
+
+    }
+    .castle, .princess{
+        width: 200px;
+        height: 200px;
+        border: 10px solid rgb(255, 0, 136);
+        border-right: 10px solid rgb(89, 1, 139);
+        border-left: 10px solid rgb(89, 1, 139);
+        background: url(../images/candy-castle.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        margin-top: 30px;
+  
+    }
+    .princess{
+        background: url(../images/princess.png);
+        width: 80vw;
+        height: 300px;
+        background-size: 100% 100%;
+       margin: auto;
+       background-color: rgba(185, 3, 34, 0.747);
+    }
+    .next{
+        position: absolute;
+        top: 93%;
+        left: 97%;
+        width: 50px;
+        height: 50px;
+        background: url(../images/next.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        z-index: 20;
+       
+    }
+    .candy-pic{
+        width: 80vw;
+        height: 30vh;
+        background-size: 100% 100%;
+       margin: auto;
+       /* background-color: rgba(233, 222, 176, 0.747);
+       border: 10px solid rgb(255, 0, 136);
+       border-right: 10px solid rgb(89, 1, 139);
+       border-left: 10px solid rgb(89, 1, 139); */
+       display: flex;
+       justify-content: space-evenly;
+       padding: 20px;
+       box-sizing: border-box;
+        font-size: 100px;
+        font-weight: bold;
+        text-shadow: 1px 1px deeppink, -1px -1px deeppink;
+        color:pink;
+    }
+    .candy-pic span{
+        height: 100%;
+        width: 20%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .candy1{
+        background: url(../images/candy1.png);
+       
+    }
+    .candy2{
+        background: url(../images/candy2.png);
+       
+    }
+    .candy3{
+        background: url(../images/candy3.png);
+       
+    }
+    .friends{
+        height: 50vh;
+        width: 50%;
+        margin: auto;
+        background-image: url(../images/friends.jpg);
+        background-size: 100% 100%;
+        background-color: rgba(233, 222, 176, 0.747);
+       border: 10px solid rgb(255, 0, 136);
+       border-right: 10px solid rgb(89, 1, 139);
+       border-left: 10px solid rgb(89, 1, 139); 
+    
+    }
